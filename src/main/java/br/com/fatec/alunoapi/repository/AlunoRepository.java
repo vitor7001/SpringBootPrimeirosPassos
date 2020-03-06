@@ -6,4 +6,5 @@ import br.com.fatec.alunoapi.model.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 
+
 }

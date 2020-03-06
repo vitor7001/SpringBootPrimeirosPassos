@@ -5,77 +5,81 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TB_ALUNO")
 public class Aluno {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
-	@NotNull
-	private String nome;
-	
-	@NotNull
-	private String sobrenome;
-	
-	@NotNull
-	private String ra;
-	
-	@NotNull
-	private String curso;
-	
-	@NotNull
-	private String periodo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-	public long getId() {
-		return id;
-	}
+    @NotEmpty(message = "O campo nome não pode ser vazio!")
+    private String nome;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @NotEmpty(message = "O campo sobrenome não pode ser vazio!")
+    private String sobrenome;
 
-	public String getNome() {
-		return nome;
-	}
+    @NotEmpty(message = "O campo ra não pode ser vazio!")
+    private String ra;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    @NotEmpty(message = "O campo curso não pode ser vazio!")
+    private String curso;
 
-	public String getSobrenome() {
-		return sobrenome;
-	}
+    @NotEmpty(message = "O campo periodo não pode ser vazio!")
+    private String periodo;
 
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
+    public Aluno() {
+    }
 
-	public String getRa() {
-		return ra;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setRa(String ra) {
-		this.ra = ra;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getCurso() {
-		return curso;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setCurso(String curso) {
-		this.curso = curso;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public String getPeriodo() {
-		return periodo;
-	}
+    public String getSobrenome() {
+        return sobrenome;
+    }
 
-	public void setPeriodo(String periodo) {
-		this.periodo = periodo;
-	}
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String getRa() {
+        return ra;
+    }
+
+    public void setRa(String ra) {
+        this.ra = ra;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
 
 }
